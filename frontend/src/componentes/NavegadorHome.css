@@ -45,3 +45,114 @@
   color: white;
   cursor: pointer;
 }
+/* Estilos generales para el body */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: inline-block;
+}
+
+/* Efecto hover para los enlaces */
+.navbar a:hover {
+  background-color: #575757;
+}
+
+/* Contenedor principal para el contenido */
+.container {
+  margin-top: 60px; /* Espacio para la barra de navegación */
+  padding: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los títulos */
+h1, h2, h3 {
+  color: #333;
+}
+
+/* Estilos para los formularios */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para los botones */
+button {
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Estilos para mensajes de error y éxito */
+.error {
+  color: #dc3545;
+}
+
+.success {
+  color: #28a745;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .navbar {
+      padding: 10px;
+  }
+
+  .container {
+      padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+  }
+}
+  
