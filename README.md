@@ -1,2 +1,1 @@
-# FinalArqSoft_II
-Final
+# proyecto_arqui_soft_2
