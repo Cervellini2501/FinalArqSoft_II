@@ -209,7 +209,7 @@ func (controller CursoController) GetAllCursos(c *gin.Context) {
 
 	if er != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": fmt.Sprintf("error eliminando curso: %s", er.Error()),
+			"error": fmt.Sprintf("error obteniendo todos los cursos: %s", er.Error()),
 		})
 		return
 	}

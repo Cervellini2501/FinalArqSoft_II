@@ -56,7 +56,7 @@ const Cursos = () => {
                 
             
                 <div className="course-list">
-                    {cursos.length > 0 ? (
+                    {cursos && cursos.length > 0 ? (
                         cursos.map(curso => (
                             <div key={curso.id} className="course-list-item">
                                 <div>

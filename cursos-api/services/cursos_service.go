@@ -325,7 +325,7 @@ func (service CursoService) Delete(ctx context.Context, id string) error {
 func (service CursoService) GetAllCursos(ctx context.Context) ([]domain.CursoData, error) {
 	cursosDAO, err := service.mainRepository.GetAllCursos(ctx)
 	if err != nil {
-		return nil, fmt.Errorf("error obteniendo cursos: %w", err)
+		return []domain.CursoData{}, fmt.Errorf("error obteniendo cursos: %w", err)
 	}
 
 	var cursos []domain.CursoData

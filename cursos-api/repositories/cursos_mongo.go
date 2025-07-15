@@ -275,7 +275,7 @@ func (repository Mongo) GetAllCursos(ctx context.Context) ([]domain.CursoData, e
 	cursor, err := repository.client.Database(repository.database).
 		Collection(repository.collection).Find(ctx, filter)
 	if err != nil {
-		return nil, fmt.Errorf("error finding documents: %w", err)
+		return []domain.CursoData{}, fmt.Errorf("error finding documents: %w", err)
 	}
 	defer cursor.Close(ctx)
 
@@ -296,7 +296,7 @@ func (repository Mongo) GetAllCursos(ctx context.Context) ([]domain.CursoData, e
 		}
 
 		if err := cursor.Decode(&curso); err != nil {
-			return nil, fmt.Errorf("error decoding result: %w", err)
+			return []domain.CursoData{}, fmt.Errorf("error decoding result: %w", err)
 		}
 
 		// Convertir el ObjectID a string para el dominio
@@ -317,7 +317,7 @@ func (repository Mongo) GetAllCursos(ctx context.Context) ([]domain.CursoData, e
 	}
 
 	if err := cursor.Err(); err != nil {
-		return nil, fmt.Errorf("cursor error: %w", err)
+		return []domain.CursoData{}, fmt.Errorf("cursor error: %w", err)
 	}
 	return cursos, nil
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../componentes/NavegadorHome.css';
 import toast, { Toaster } from 'react-hot-toast';
-import './registrarse.css'
+import './cursonuevo.css'
 
 
 const CursoNuevo = () => {
