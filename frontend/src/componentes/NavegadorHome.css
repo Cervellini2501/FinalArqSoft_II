@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
-
 .navbar {
-  background-color: #ffffff;
+  background-color: #1d2e65 !important;
   padding: 1rem;
-  font-family: DM Serif Text    , sans-serif;
+  font-family: Georgia, serif;
   align-items: center;
   justify-content: center;
 
@@ -15,7 +13,7 @@
   justify-content: space-around;
   margin: 0;
   padding: 0;
-}
+} 
 
 .navlinks li {
   margin: 0 1rem;
@@ -28,23 +26,27 @@
 
 .navlinks form {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.navlinks input {
+.navlinks input[type="text"] {
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
   margin-right: 0.5rem;
+  width: 200px;
 }
 
 .navlinks button {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
-  background-color: #c46df7;
-  color: white;
+  background-color: #86d7f7;
+  color: rgb(2, 2, 3);
   cursor: pointer;
 }
+
 /* Estilos generales para el body */
 body {
   font-family: 'Arial', sans-serif;
@@ -55,7 +57,7 @@ body {
 
 /* Estilos para la barra de navegación */
 .navbar {
-  background-color: #333;
+  background-color: #a6e6eb;
   color: white;
   padding: 15px;
   position: fixed; /* Fija la barra en la parte superior */
@@ -75,7 +77,7 @@ body {
 
 /* Efecto hover para los enlaces */
 .navbar a:hover {
-  background-color: #575757;
+  background-color: #a6e6eb;
 }
 
 /* Contenedor principal para el contenido */
@@ -117,13 +119,13 @@ button {
   margin-top: 20px;
   border: none;
   border-radius: 4px;
-  background-color: #28a745;
+  background-color: #285ba7;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #2a2188;
 }
 
 /* Estilos para mensajes de error y éxito */

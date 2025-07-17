@@ -24,7 +24,7 @@ const NavegadorHome = ({ onSearch }) => {
 
   return (
     <nav className="navbar">
-      <h2>CodeWave Learning</h2>
+     
       <ul className="navlinks">
 
         <li><Link to="/">Home</Link></li>

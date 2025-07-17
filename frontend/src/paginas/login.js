@@ -82,6 +82,7 @@ const LoginForm = () => {
     return (
         <div className="login-form-container">
             <form onSubmit={handleSubmit} className="login-form">
+            <h2 className="login-title">Iniciar sesión</h2> 
                 <div className="form-group">
                     <label>Email</label>
                     <br/>
@@ -108,9 +109,12 @@ const LoginForm = () => {
                 <br/><br/>
                 <button type="submit">Iniciar sesión</button>
                 <br/><br/>
-                <Link to={`/registrarse`} className="curso-link">
-                                            <strong>No tenes cuenta? Registrate</strong>
-                                        </Link>
+                <p className="registro-texto">
+                    No tienes una cuenta?{' '}
+                <Link to="/registrarse" className="registro-link">
+                    Regístrate
+                </Link>
+                </p>
             </form>
 
 

@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
-
-/* Estilos generales para la página principal */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -8,12 +5,12 @@
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    font-family: 'DM Serif Text', sans-serif;
-    background: linear-gradient(45deg, #5a3ae7, #7746d1, #ac44e9);
-    background-size: 300% 300%;
-    animation: gradientAnimation 7s ease-in-out infinite;
-    text-align: center; /* Alinea el texto centralmente */
-    color: #ffffff; /* Color de texto */
+    font-family: Arial, sans-serif;
+    background: url('../img/fondo1.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Cambiado a fixed */
+    text-align: center;
+    color: #ffffff;
 }
 
 .header {

@@ -15,9 +15,9 @@
   font-family: 'DM Serif Text', sans-serif;
 
   min-height: 100vh;
-  background: linear-gradient(45deg, #5a3ae7, #7746d1, #ac44e9);
-  background-size: 300% 300%; /* Hace que la animación sea visible */
-  animation: gradientAnimation 5s ease-in-out infinite;
+  background: url('../img/fondo1.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Clase específica para tu componente */

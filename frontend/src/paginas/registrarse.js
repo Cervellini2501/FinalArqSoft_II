@@ -2,24 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../componentes/NavegadorHome.css';
 import toast, { Toaster } from 'react-hot-toast';
-import './registrarse.css'
+import './registrarse.css';
 
 const fetchUserData = async (email) => {
     try {
         const response = await fetch(`http://localhost:8081/users/email/${email}`);
         if (response.ok) {
-            return await response.json(); // Devuelve los datos del usuario si la solicitud es exitosa
+            return await response.json();
         } else {
             console.error('Error al obtener datos del usuario:', response.status);
-            return null; // Devuelve null si la solicitud no es exitosa
+            return null;
         }
     } catch (error) {
         console.error('Error al realizar la solicitud al backend:', error);
-        return null; // Devuelve null si hay un error durante la solicitud
+        return null;
     }
 };
-
-
 
 const Registrarse = () => {
     const [email, setEmail] = useState("");
@@ -31,141 +29,129 @@ const Registrarse = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        let valid = true
+
+        let valid = true;
 
         if (email === '') {
             document.getElementById("inputEmailReg").style.borderColor = 'red';
-            toast.error("Ingrese el email correctamente."); // Muestra un mensaje de error si las credenciales son incorrectas
-            valid = false
+            toast.error("Ingrese el email correctamente.");
+            valid = false;
         }
 
-        if (password === ''){
+        if (password === '') {
             document.getElementById("inputPasswordReg").style.borderColor = 'red';
-            toast.error("Ingrese la contraseña correctamente."); // Muestra un mensaje de error si las credenciales son incorrectas
-            valid = false
-
+            toast.error("Ingrese la contraseña correctamente.");
+            valid = false;
         }
 
-        if (nombre === ''){
+        if (nombre === '') {
             document.getElementById("inputNombreReg").style.borderColor = 'red';
-            toast.error("Ingrese su nombre."); // Muestra un mensaje de error si las credenciales son incorrectas
-            valid = false
-
+            toast.error("Ingrese su nombre.");
+            valid = false;
         }
 
-        if (apellido === ''){
+        if (apellido === '') {
             document.getElementById("inputApellidoReg").style.borderColor = 'red';
-            toast.error("Ingrese su apellido."); // Muestra un mensaje de error si las credenciales son incorrectas
-            valid = false
-
+            toast.error("Ingrese su apellido.");
+            valid = false;
         }
 
-        if(valid){
-                try{
-                
-                    const check = await fetch(`http://localhost:8081/users/email/${email}`)
+        if (valid) {
+            try {
+                const check = await fetch(`http://localhost:8081/users/email/${email}`);
 
-                    if(check.ok){
-                        toast.error("Ya existe un usuario con ese email.");
-                    }else{
-                        const response = await fetch('http://localhost:8081/users/create', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-    
-                            },
-                            body: JSON.stringify({ email, password, tipo, nombre, apellido }),
-    
-                        });
-    
-                        if (response.ok) {
-                    
-                            navigate('/login'); // Redirige al usuario a la página principal después del login exitoso
-                            toast.success("Creación exitosa. Ingrese nuevamente.");
-    
-                        } else {
-                            toast.error(    "Usuario Invalido");
-                        }
+                if (check.ok) {
+                    toast.error("Ya existe un usuario con ese email.");
+                } else {
+                    const response = await fetch('http://localhost:8081/users/create', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email, password, tipo, nombre, apellido }),
+                    });
+
+                    if (response.ok) {
+                        const data = await fetchUserData(email);
+                        console.log("Datos del nuevo usuario:", data);
+
+                        toast.success("Creación exitosa. Ingrese nuevamente.");
+                        navigate('/login');
+                    } else {
+                        toast.error("Usuario Invalido");
                     }
-
-                }catch (error){
-                    console.error('Error al realizar la solicitud al backend:', error);
-                    toast.error("Error al intentar iniciar sesión");
                 }
-        }   
+            } catch (error) {
+                console.error('Error al realizar la solicitud al backend:', error);
+                toast.error("Error al intentar iniciar sesión");
+            }
+        }
     };
-
 
     return (
         <div className="login-form-container">
             <form onSubmit={handleSubmit} className="login-form">
-
+            <h2 className="login-title">Registrarse</h2> 
                 <div className="form-group">
-                    <label>Nombre</label> 
-                    <br/>
+                    <label>Nombre</label>
+                    <br />
                     <input
-                        id={"inputNombreReg"}
+                        id="inputNombreReg"
                         type="text"
                         value={nombre}
                         onChange={(e) => setNombre(e.target.value)}
                         placeholder="Ingrese su nombre"
-                        
                     />
                 </div>
 
                 <div className="form-group">
-                <br/>
+                    <br />
                     <label>Apellido</label>
-                    <br/>
+                    <br />
                     <input
-                        id={"inputApellidoReg"}
+                        id="inputApellidoReg"
                         type="text"
                         value={apellido}
                         onChange={(e) => setApellido(e.target.value)}
                         placeholder="Ingrese su apellido"
-                        
                     />
                 </div>
 
                 <div className="form-group">
-                <br/>
+                    <br />
                     <label>Email</label>
-                    <br/>
+                    <br />
                     <input
-                        id={"inputEmailReg"}
+                        id="inputEmailReg"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Ingrese su email"
-                        
                     />
                 </div>
 
                 <div className="form-group">
-                <br/>
+                    <br />
                     <label>Tipo</label>
-                    <br/>
-                    <select value={tipo}
+                    <br />
+                    <select
+                        value={tipo}
                         onChange={(e) => setTipo(e.target.value)}
-                        
-                        id={"inputTipoReg"}
-                        >                       
-                         <option value="">Elegir</option>
+                        id="inputTipoReg"
+                        className="select-tipo"
+                    >
+                        <option value="">Seleccione una opción</option>
                         <option value="estudiante">Estudiante</option>
                         <option value="admin">Admin</option>
-                        
-
                     </select>
-                    
                 </div>
 
                 <div className="form-group">
-                <br/>
+                    <br />
                     <label>Contraseña</label>
-                    <br/>
+                    <br />
                     <input
-                        id={"inputPasswordReg"}
+                        id="inputPasswordReg"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -173,11 +159,11 @@ const Registrarse = () => {
                     />
                 </div>
 
-                <br/><br/>
-
+                <br /><br />
                 <button type="submit">Registrarse</button>
             </form>
-            <Toaster /> {/* Componente para mostrar notificaciones toast */}
+
+            <Toaster />
         </div>
     );
 };

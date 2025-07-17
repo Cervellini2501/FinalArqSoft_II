@@ -1,25 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+/* Fondo completo para el body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('../img/fondo1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Georgia, serif;
+}
 
-
+/* Centrado del formulario */
 .login-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    background: linear-gradient(45deg, #5a3ae7, #7746d1, #ac44e9);
-    background-size: 300% 300%; /* Hace que la animación sea visible */
-    animation: gradientAnimation 5s ease-in-out infinite;
+    height: 100vh;
+    text-align: center;
 }
 
+/* Estilo moderno y translúcido del formulario */
 .login-form {
-    width: 300px; /* Ancho del formulario */
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    font-family: DM Serif Text    , sans-serif;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    padding: 30px;
+    background: #3b5e8e94; /* Transparencia */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Difuminado de fondo */
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-family: Georgia, serif;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Inputs y etiquetas */
 .form-group {
     margin-bottom: 15px;
 }
@@ -27,39 +39,55 @@
 label {
     display: block;
     margin-bottom: 5px;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #8a5edd;
+    background-color: #007BFF; 
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: DM Serif Text    , sans-serif;
-
+    font-family: Georgia, serif;
 }
-
 button:hover {
-    background-color: #731797;
+    background-color: #0056b3; 
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+.curso-link {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .login-form {
+        width: 90%;
     }
 }
 
-  /* Estilos responsive */
-  @media screen and (max-width: 768px) {
-    .home-container {
-      grid-template-columns: 1fr;
-    }
- }
+.registro-texto {
+    margin-top: 10px;
+    color: white;
+    font-family: 'DM Serif Text', sans-serif;
+}
+
+.registro-link {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+  
+.registro-link:hover {
+    color: black;
+}
+  
