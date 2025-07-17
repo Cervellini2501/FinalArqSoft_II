@@ -107,7 +107,7 @@ const LoginForm = () => {
                     />
                 </div>
                 <br/><br/>
-                <button type="submit">Iniciar sesión</button>
+                <button className="mi-boton" type="submit">Ingresar</button>
                 <br/><br/>
                 <p className="registro-texto">
                     No tienes una cuenta?{' '}

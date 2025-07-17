@@ -1,6 +1,3 @@
-/* General styles for the carousel and courses */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
-
 .Courses {
     display: flex;
     justify-content: center;
@@ -108,7 +105,7 @@
 /* Custom styles for Curso component */
 .Curso {
     padding: 10px;
-    font-family: 'DM Serif Text', sans-serif;
+    font-family: Georgia, serif;
     
 }
 
@@ -136,7 +133,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: DM Serif Text    , sans-serif;
+    font-family: Georgia, serif;
 
 }
 
@@ -166,3 +163,22 @@
     background-color: #1d2e65;
   }
   
+.mi-boton {
+    background-color: #6e44ef;
+    color: white;
+    padding: 10px 28px; /* un poco más de espacio vertical y horizontal */
+    width: 180px;       /* un poco más ancho que 120px */
+    border: none;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+    font-size: 17px;    /* un toque más grande que 16px */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+}
+
+.mi-boton:hover {
+    background-color: #5a3fc0;
+}

@@ -142,7 +142,7 @@ const Registrarse = () => {
                     >
                         <option value="">Seleccione una opción</option>
                         <option value="estudiante">Estudiante</option>
-                        <option value="admin">Admin</option>
+                        <option value="admin">Administrador</option>
                     </select>
                 </div>
 
@@ -160,7 +160,7 @@ const Registrarse = () => {
                 </div>
 
                 <br /><br />
-                <button type="submit">Registrarse</button>
+                <button className="mi-boton" type="submit">Confirmar información</button>
             </form>
 
             <Toaster />
