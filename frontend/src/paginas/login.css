@@ -24,7 +24,7 @@ body {
 .login-form {
     width: 600px;
     padding: 30px;
-    background: #3b5e8e94; 
+    background: #bbdde978; 
     border-radius: 15px;
     backdrop-filter: blur(10px); /* Difuminado de fondo */
     -webkit-backdrop-filter: blur(10px);
@@ -64,11 +64,11 @@ input {
 button:hover {
     background-color: #0056b3; 
 }
-
+*/
 .curso-link {
-    color: white;
+    color: rgb(42, 33, 57);
     text-decoration: underline;
-} */
+} 
 
 /* Responsive */
 @media screen and (max-width: 768px) {

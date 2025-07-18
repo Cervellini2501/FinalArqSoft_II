@@ -13,7 +13,7 @@
 }
 
 body{
-    background: linear-gradient(45deg, #5a3ae7, #7746d1, #ac44e9);
+    background: url('../img/fondo1.jpeg') no-repeat center center;
     background-size: 300% 300%; /* Hace que la animación sea visible */
 }
 
@@ -102,7 +102,7 @@ body{
 .carousel .slide {
     background: none;
     text-align: center;
-    padding: 20px; /* Añade un relleno al slide */
+    padding: 20px; 
     margin: 0 auto; /* Centra el slide horizontalmente */
     max-width: 70%; /* Ajusta el ancho máximo del slide */
 }
@@ -110,9 +110,9 @@ body{
 
 .carousel .slide img {
     display: block;
-    max-width: 100%; /* Ajusta el ancho máximo de la imagen */
-    height: auto; /* Ajusta la altura automáticamente */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; 
+    height: auto; 
+    margin: 0 auto; 
     border-radius: 8px;
 }
 
@@ -152,9 +152,9 @@ body{
 }
 
 .inscribirsebutton {
-    width: 45%;
+    width: 30%;
     padding: 10px;
-    background-color: #8a5edd;
+    background-color: #332145;
     color: white;
     border: none;
     border-radius: 4px;

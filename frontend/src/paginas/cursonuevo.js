@@ -124,7 +124,7 @@ const CursoNuevo = () => {
     return (
         <div className="curso-form-container">
             <form onSubmit={handleSubmit} className="login-form">
-
+            <h2 className="login-title">Nuevo curso</h2> 
                 <div className="form-group">
                     <label>Nombre</label> 
                     <br/>
