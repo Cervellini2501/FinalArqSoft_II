@@ -122,7 +122,7 @@ const CursoNuevo = () => {
 
 
     return (
-        <div className="login-form-container">
+        <div className="curso-form-container">
             <form onSubmit={handleSubmit} className="login-form">
 
                 <div className="form-group">
