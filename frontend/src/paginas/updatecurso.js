@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import '../componentes/NavegadorHome.css';
 import toast, { Toaster } from 'react-hot-toast';
-import './registrarse.css'
+import './cursonuevo.css'
 import { useParams } from 'react-router-dom';
 
 
@@ -136,7 +136,7 @@ const UpdateCurso = () => {
                             imagen, 
                             profesor, 
                             duracion: parseInt(duracion),
-                            requisitos, 
+                            requisito: requisitos,
                             valoracion: parseInt(valoracion) }),
 
                     });
@@ -160,7 +160,7 @@ const UpdateCurso = () => {
 
 
     return (
-        <div className="login-form-container">
+        <div className="curso-form-container">
 
             <form onSubmit={handleSubmit} className="login-form">
 
@@ -240,7 +240,7 @@ const UpdateCurso = () => {
                         type="text"
                         value={duracion}
                         onChange={(e) => setDuracion(e.target.value)}
-                        placeholder="Ingrese la duración de cursada"
+                        placeholder="Ingrese la duración de cursada en meses"
                         
                     />
                 </div>

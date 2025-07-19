@@ -98,7 +98,7 @@ const CursoNuevo = () => {
                                 imagen, 
                                 profesor, 
                                 duracion: parseInt(duracion),
-                                requisitos, 
+                                requisito: requisitos,
                                 valoracion: parseInt(valoracion) }),
     
                         });
@@ -201,7 +201,7 @@ const CursoNuevo = () => {
                         type="text"
                         value={duracion}
                         onChange={(e) => setDuracion(e.target.value)}
-                        placeholder="Ingrese la duración de cursada"
+                        placeholder="Ingrese la duración de cursada en meses"
                         
                     />
                 </div>
