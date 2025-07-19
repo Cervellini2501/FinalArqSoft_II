@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Aplicación web completa para la gestión de cursos educativos, desarrollada bajo una arquitectura de microservicios. El sistema permite a los usuarios explorar, buscar e inscribirse en cursos, mientras que los administradores pueden gestionar los cursos desde una interfaz exclusiva. Cuenta con un frontend moderno en React y múltiples microservicios backend escritos en Go, cada uno especializado en una función.
+Aplicación web para la gestión de cursos educativos, desarrollada bajo una arquitectura de microservicios. El sistema permite a los usuarios explorar, buscar e inscribirse en cursos, mientras que los administradores pueden gestionar los cursos desde una interfaz exclusiva. Cuenta con un frontend moderno en React y múltiples microservicios backend escritos en Go, cada uno especializado en una función específica, contenedorizado individualmente con Docker y orquestado mediante Docker Compose.
 
 ## Arquitectura del Sistema
 
@@ -24,15 +24,29 @@ Aplicación web completa para la gestión de cursos educativos, desarrollada baj
 
 ## Instalación y Configuración
 
+### 1. Clonar el repositorio 
+
 ```bash
 git clone git@github.com:Cervellini2501/FinalArqSoft_II.git
 cd FinalArqSoft_II
+```
+
+### 2. Iniciar todos los servicios:
+
+```bash
 docker compose up --build
+```
+### 3. Verificar que todos los servicios estén corriendo
+```bash
+docker compose ps
+```
 
 Una vez levantados los servicios, en una nueva terminal:
+
 ```bash
 node indexador.js
 ```
+
 
 ## Autores
 - Valentina Cervellini, 2200169.
