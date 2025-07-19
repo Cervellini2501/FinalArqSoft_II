@@ -84,13 +84,13 @@ func (service Service) Gettoken(password string, usuario domain.UsuarioData) (st
 	log.Println("hash:", usuario.Passwordhash)
 
 	if hash != usuario.Passwordhash {
-		return "", fmt.Errorf("Contraseña incorrecta.")
+		return "", fmt.Errorf("contraseña incorrecta")
 	}
 
 	token, err := service.GenerarJWT(usuario.Email)
 
 	if err != nil {
-		return "", fmt.Errorf("Error al generar JWT token: %w", err)
+		return "", fmt.Errorf("error al generar JWT token: %w", err)
 	}
 	return token, nil
 
@@ -99,11 +99,11 @@ func (service Service) Gettoken(password string, usuario domain.UsuarioData) (st
 func (service Service) Login(email string, password string) (string, error) {
 
 	if strings.TrimSpace(email) == "" {
-		return "", errors.New("Debe ingresar un email.")
+		return "", errors.New("debe ingresar un email")
 	}
 
 	if strings.TrimSpace(password) == "" {
-		return "", errors.New("Debe ingresar una contraseña.")
+		return "", errors.New("debe ingresar una contraseña")
 	}
 
 	var token string
@@ -157,7 +157,7 @@ func (service Service) Login(email string, password string) (string, error) {
 		return token, error
 
 	} else {
-		return "", fmt.Errorf("Hubo un error al buscar el usuario en la Base de Datos.")
+		return "", fmt.Errorf("hubo un error al buscar el usuario en la Base de Datos")
 
 	}
 

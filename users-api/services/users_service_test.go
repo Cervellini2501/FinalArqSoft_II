@@ -219,11 +219,7 @@ func TestService(t *testing.T) {
 		memcachedRepo.AssertExpectations(t)
 	})
 
-	// ver
-	// /Users/lucianahueda/Documents/Final-Arqui/proyecto_arqui_soft_2/users-api/services/users_service_test.go:232:
-	// Error Trace:	/Users/lucianahueda/Documents/Final-Arqui/proyecto_arqui_soft_2/users-api/services/users_service_test.go:232
-	// Error:      	An error is expected but got nil.
-	// Test:       	TestService/Login_-_Token_Generation_Error
+
 	t.Run("Login - Token Generation Error", func(t *testing.T) {
 		email := "email1"
 		password := "password"
