@@ -63,8 +63,8 @@ function MisCursos({ searchTerm }) {
                       <Link to={`/curso/${curso.id}`} className="curso-link">
                                         <strong>{curso.nombre}</strong>
                                     </Link>
-                    <p>{curso.descripcion}</p>
-                    <p><b>Categoria:</b> {curso.categoria}</p>
+                    <p><b>💻</b>{curso.descripcion}</p>
+                    <p><b>🗂️</b> {curso.categoria}</p>
                     <br/>
                   </div>
                   <hr />
