@@ -17,7 +17,7 @@ const Curso = () => {
     const usuariotipo = localStorage.getItem("tipo");
     const [error, setError] = useState(null);
 
-    const navigate = useNavigate(); // Permite la navegación entre páginas con las rutas
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         const fetchCurso = async () => {
@@ -124,13 +124,21 @@ const Curso = () => {
             <div className="Resultadosfondo">
                 <div className="course-list-item">
                     <h3>{curso.nombre}</h3>
-                    <p>{curso.descripcion}</p>
-                    <p><b>Categoria:</b> {curso.categoria}</p>
-                    <p><b>Profesor:</b> {curso.profesor}</p>
-                    <p><b>Duracion:</b> {curso.duracion} meses</p>
+                    <p>💻{curso.descripcion}</p>
+                    <p><b>🗂️</b> {curso.categoria}</p>
+                    <p><b>👨🏻‍🏫</b> {curso.profesor}</p>
+                    <p><b>🗓️</b> {curso.duracion} meses</p>
                     <p><b>Requisitos:</b> {curso.requisito}</p>
-                    <p><b>Capacidad:</b> {curso.capacidad}</p> 
-                    
+                    <p><b>Capacidad:</b> {curso.capacidad}</p>
+                    <p><b>Valoración:</b> {curso.valoracion}</p> 
+                    {curso.imagen && (
+                    <img
+                        src={`/img/${curso.imagen}`}
+                        alt={`Imagen del curso ${curso.nombre}`}
+                        style={{ width: '100%', maxWidth: '400px', borderRadius: '10px' }}
+                        />
+                    )}
+
                     {mostrar1() && (
                         <>
                             <button onClick={handleInscripcion} className="inscribirsebutton">Inscribirme</button>

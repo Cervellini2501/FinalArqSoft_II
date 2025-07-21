@@ -63,10 +63,10 @@ const Cursos = () => {
                                     <Link to={`/curso/${curso.id}`} className="curso-link">
                                         <strong>{curso.nombre}</strong>
                                     </Link>
-                                    <p>{curso.descripcion}</p>
-                                    <p>{curso.categoria}</p>
+                                    <p>💻{curso.descripcion}</p>
+                                    <p>🗂️{curso.categoria}</p>
                                     <br/>
-                                    Para saber más, haga click al nombre del curso.
+                                    Para más información, haga click al nombre del curso.
                                 </div>
                                 <hr />
                             </div>
