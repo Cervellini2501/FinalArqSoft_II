@@ -12,11 +12,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	//agregue yo para inscripcion
+	
 	"proyecto_arqui_soft_2/cursos-api/dao"
 )
 
-// lo agregue para inscripcion
+
 type CursosRepository interface {
 	ObtenerCursoPorID(cursoID string) (dao.Curso, error)
 	ActualizarCurso(curso dao.Curso) error
